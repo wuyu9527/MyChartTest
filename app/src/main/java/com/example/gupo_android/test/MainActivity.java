@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
         hsv = findViewById(R.id.hsv);
         lc = findViewById(R.id.lc);
         List<ChartData.Coordinate> coordinates = new ArrayList<>();
-        ChartData chartData = new ChartData(400, -200, 400+"","",coordinates);
+        ChartData chartData = new ChartData(300, -100, 300+"",-100+"",coordinates);
         ChartData.Coordinate coordinate;
         /*for (int i = 10; i < 20; i++) {
             switch (i) {

@@ -85,6 +85,9 @@ public class ChartData {
         //颜色
         private int color;
 
+        public Coordinate() {
+        }
+
         public Coordinate(int id, String date, double num, boolean isNow, int numColor, int color) {
             this.id = id;
             this.date = date;

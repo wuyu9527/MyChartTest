@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.ViewGroup;
 
-
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -455,10 +454,11 @@ public abstract class BaseChart extends ViewGroup {
         num.clear();
         mean.clear();
         isNow.clear();
+        numColor.clear();
         max = chartData.getMax();
         min = chartData.getMin();
         //重复使用的
-        double difference = max * 0.1;
+        double difference = (max - min) * 0.2;
         max += difference;
         min -= difference;
 
@@ -471,6 +471,8 @@ public abstract class BaseChart extends ViewGroup {
             afterLength = 3;
         } else if (difference <= 0.9) {
             afterLength = 4;
+        } else if (difference > 1000) {
+            afterLength = 0;
         } else {
             afterLength = 1;
         }
