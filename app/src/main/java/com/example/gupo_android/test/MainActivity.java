@@ -20,6 +20,8 @@ import com.example.gupo_android.test.View.LineChart;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 测试用
@@ -40,13 +42,13 @@ public class MainActivity extends Activity {
         lc = findViewById(R.id.lc);
 
         String range = "1-1";
-        String [] ranges= range.split("-");
+        String[] ranges = range.split("-");
         List<String> rangesList = Arrays.asList(ranges);
-        Log.i("whx","ranges.length:"+ranges.length+":"+rangesList);
+        Log.i("whx", "ranges.length:" + ranges.length + ":" + rangesList);
 
 
         List<ChartData.Coordinate> coordinates = new ArrayList<>();
-        ChartData chartData = new ChartData(300, -100, 300+"",-100+"",coordinates);
+        ChartData chartData = new ChartData(300, -100, 300 + "", -100 + "", coordinates);
         ChartData.Coordinate coordinate;
         /*for (int i = 10; i < 20; i++) {
             switch (i) {
@@ -77,21 +79,25 @@ public class MainActivity extends Activity {
         coordinates.add(new ChartData.Coordinate(12, "2018-08-" + 23 + " " + 19 + ":00:00", 440, false, 0, 0));
 
 
-
         lc.setData(chartData);
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchAppDetail("com.groupds.android","com.tencent.android.qqdownloader");
+                launchAppDetail("com.groupds.android", "com.tencent.android.qqdownloader");
             }
         });
 
+        String msg = "{\"content\":\"sets alder no\",\"to_username\":\"\",\"user_id\":\"\"}";
+        String msgSubstring = msg.substring(msg.length()-3,msg.length());
+        boolean isJson = msg.length()>=7&&msgSubstring.contains("\"}");
+        Log.i("whx","isJson:"+isJson);
     }
 
 
     /**
      * 获取已安装应用商店的包名列表
      * 获取有在AndroidManifest 里面注册<category android:name="android.intent.category.APP_MARKET" />的app
+     *
      * @param context
      * @return
      */
@@ -137,7 +143,8 @@ public class MainActivity extends Activity {
 
     /**
      * 跳转到应用市场app详情界面
-     * @param appPkg App的包名
+     *
+     * @param appPkg    App的包名
      * @param marketPkg 应用市场包名
      */
     public void launchAppDetail(String appPkg, String marketPkg) {
