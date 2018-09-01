@@ -87,10 +87,17 @@ public class MainActivity extends Activity {
             }
         });
 
+        findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, HorizontalActivity.class));
+            }
+        });
+
         String msg = "{\"content\":\"sets alder no\",\"to_username\":\"\",\"user_id\":\"\"}";
-        String msgSubstring = msg.substring(msg.length()-3,msg.length());
-        boolean isJson = msg.length()>=7&&msgSubstring.contains("\"}");
-        Log.i("whx","isJson:"+isJson);
+        String msgSubstring = msg.substring(msg.length() - 3, msg.length());
+        boolean isJson = msg.length() >= 7 && msgSubstring.contains("\"}");
+        Log.i("whx", "isJson:" + isJson);
     }
 
 

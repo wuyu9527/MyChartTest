@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HorizontalActivity"
+            android:label="@string/title_activity_horizontal" />
+        <activity
+            android:name=".BarHorizontalActivity"
+            android:label="@string/title_activity_bar_horizontal"></activity>
     </application>
 
 </manifest>

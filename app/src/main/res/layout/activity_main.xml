@@ -15,6 +15,13 @@
         android:text="跳转到应用市场评价"
         />
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转到横向选择"
+        />
+
     <HorizontalScrollView
         android:id="@+id/hsv"
         android:layout_width="wrap_content"

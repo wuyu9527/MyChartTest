@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Test</string>
+    <string name="title_activity_horizontal">HorizontalActivity</string>
+    <string name="title_activity_bar_horizontal">BarHorizontalActivity</string>
 </resources>
