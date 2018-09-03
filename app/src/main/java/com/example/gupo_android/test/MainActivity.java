@@ -94,6 +94,13 @@ public class MainActivity extends Activity {
             }
         });
 
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, HtmlJSActivity.class));
+            }
+        });
+
         String msg = "{\"content\":\"sets alder no\",\"to_username\":\"\",\"user_id\":\"\"}";
         String msgSubstring = msg.substring(msg.length() - 3, msg.length());
         boolean isJson = msg.length() >= 7 && msgSubstring.contains("\"}");
