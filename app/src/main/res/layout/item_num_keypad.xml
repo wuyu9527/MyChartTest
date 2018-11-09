@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <!--<TextView-->
+    <TextView
+        android:id="@+id/tvNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="53dp"
+        android:minWidth="23dp"
+        android:textColor="@android:color/white"
+        android:textSize="38sp"
+        android:layout_marginBottom="25dp"
+        tools:text="1" />
+
+    <com.example.gupo_android.test.View.IconFontView
+        android:id="@+id/ifv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="53dp"
+        android:minWidth="23dp"
+        android:textColor="@android:color/white"
+        android:textSize="38sp"
+        android:text="&#xe6a8;"
+        android:visibility="gone"
+        tools:text="1" />
+
+</LinearLayout>

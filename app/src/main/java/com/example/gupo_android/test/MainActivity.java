@@ -7,15 +7,20 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.HorizontalScrollView;
+import android.widget.Toast;
 
+import com.example.gupo_android.test.Protect.ProtectAppActivity;
+import com.example.gupo_android.test.Util.FingerUtils;
 import com.example.gupo_android.test.View.BaseChart;
 import com.example.gupo_android.test.View.ChartData;
 import com.example.gupo_android.test.View.LineChart;
+import com.example.gupo_android.test.lib.biometriclib.BiometricPromptManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,11 +33,12 @@ import java.util.regex.Pattern;
  *
  * @author whx
  */
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
     private HorizontalScrollView hsv;
     private LineChart lc;
-
+    //指纹第二个方式
+    private BiometricPromptManager mManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,31 +86,14 @@ public class MainActivity extends Activity {
 
 
         lc.setData(chartData);
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchAppDetail("com.groupds.android", "com.tencent.android.qqdownloader");
-            }
-        });
-
-        findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, HorizontalActivity.class));
-            }
-        });
-
-        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, HtmlJSActivity.class));
-            }
-        });
 
         String msg = "{\"content\":\"sets alder no\",\"to_username\":\"\",\"user_id\":\"\"}";
         String msgSubstring = msg.substring(msg.length() - 3, msg.length());
         boolean isJson = msg.length() >= 7 && msgSubstring.contains("\"}");
         Log.i("whx", "isJson:" + isJson);
+        //指纹第一个方式
+        FingerUtils.instance().init(this);
+        mManager = BiometricPromptManager.from(this);
     }
 
 
@@ -177,4 +166,78 @@ public class MainActivity extends Activity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button:
+                launchAppDetail("com.groupds.android", "com.tencent.android.qqdownloader");
+                break;
+            case R.id.button1:
+                startActivity(new Intent(MainActivity.this, HorizontalActivity.class));
+                break;
+            case R.id.button2:
+                startActivity(new Intent(MainActivity.this, HtmlJSActivity.class));
+                break;
+            case R.id.button3:
+                startActivity(new Intent(MainActivity.this, ProtectAppActivity.class));
+                break;
+            case R.id.button4:
+                FingerUtils.instance().startListener(new FingerUtils.OnFingerSucceededListener() {
+                    @Override
+                    public void onSucceed() {
+                        Toast.makeText(MainActivity.this, "指纹验证成功", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        Toast.makeText(MainActivity.this, code + ":" + msg, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailed(int failedNum) {
+                        Toast.makeText(MainActivity.this, "指纹验证失败:" + failedNum, Toast.LENGTH_SHORT).show();
+                    }
+                });
+                //第二个指纹
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && mManager.isBiometricPromptEnable()) {
+                    mManager.authenticate(new BiometricPromptManager.OnBiometricIdentifyCallback() {
+                        @Override
+                        public void onUsePassword() {
+                            Toast.makeText(MainActivity.this, "onUsePassword", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onSucceeded() {
+
+                            Toast.makeText(MainActivity.this, "onSucceeded", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onFailed() {
+
+                            Toast.makeText(MainActivity.this, "onFailed", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onError(int code, String reason) {
+                            Log.i("whx", code + ":" + reason);
+                            Toast.makeText(MainActivity.this, "onError", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onCancel() {
+
+                            Toast.makeText(MainActivity.this, "onCancel", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                break;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        FingerUtils.instance().cancel();
+    }
 }

@@ -3,4 +3,15 @@
     <string name="title_activity_horizontal">HorizontalActivity</string>
     <string name="title_activity_bar_horizontal">BarHorizontalActivity</string>
     <string name="title_activity_html_js">HtmlJSActivity</string>
+    <string name="please_enter_security_lock_password">请输入安全锁密码</string>
+
+    <string name="biometric_dialog_cancel">Cancel</string>
+    <string name="biometric_dialog_title">Verification</string>
+    <string name="biometric_dialog_subtitle">Verify fingerprint to continue</string>
+    <string name="biometric_dialog_state_normal">Fingerprint sensor</string>
+    <string name="biometric_dialog_state_failed">Failed to identify, please try again</string>
+    <string name="biometric_dialog_state_error">验证错误</string>
+    <string name="biometric_dialog_state_error_enable_process">Verification error, setup failed</string>
+    <string name="biometric_dialog_state_succeeded">验证成功</string>
+    <string name="biometric_dialog_use_password">Use Password</string>
 </resources>
