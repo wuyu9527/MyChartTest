@@ -48,6 +48,14 @@
         android:text="指纹验证"
         />
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="PDF转图片"
+        />
+
     <HorizontalScrollView
         android:id="@+id/hsv"
         android:layout_width="wrap_content"
