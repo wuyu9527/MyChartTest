@@ -59,9 +59,10 @@
     <HorizontalScrollView
         android:id="@+id/hsv"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
 
         <com.example.gupo_android.test.View.LineChart
             android:id="@+id/lc"
@@ -70,5 +71,7 @@
 
 
     </HorizontalScrollView>
+
+
 
 </LinearLayout>
