@@ -244,7 +244,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.button5:
-
+                startActivity(new Intent(this, RecyclerViewTestActivity.class));
                 break;
         }
     }
@@ -283,7 +283,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
 
-    *//**
+    */
+
+    /**
      * 将宽度相同的图片，竖向追加在一起 ##注意：宽度必须相同,纵向处理图片
      *
      * @param piclist 文件流数组
@@ -337,7 +339,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             e.printStackTrace();
         }
     }*/
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

@@ -12,6 +12,10 @@ import android.support.test.uiautomator.UiSelector;
 
 import junit.framework.TestCase;
 
+import org.hamcrest.BaseMatcher;
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
+
 /**
  * 测试用例
  * Created by yangle on 2017/8/14.
@@ -92,4 +96,34 @@ public class UiTest extends TestCase {
         uiDevice.pressBack();
         uiDevice.pressBack();
     }
+
+
+    /**
+     * 有2个一样文字View，怎么只使用第一次找到的这个View
+     * 使用onView(allOf(isDisplayed(),firstFindView(withText("Hello"))));
+     *
+     * @param matcher matcher
+     * @param <T>     t
+     * @return matcher
+     */
+    public static <T> Matcher<T> firstFindView(final Matcher<T> matcher) {
+        return new BaseMatcher<T>() {
+            @Override
+            public void describeTo(Description description) {
+                description.appendText("should return first matching item");
+            }
+
+            boolean isFirst = true;
+
+            @Override
+            public boolean matches(final Object item) {
+                if (isFirst && matcher.matches(item)) {
+                    isFirst = false;
+                    return true;
+                }
+                return false;
+            }
+        };
+    }
+
 }

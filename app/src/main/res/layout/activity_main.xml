@@ -53,8 +53,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="PDF转图片"
+        android:text="RecyclerView测试"
         />
+
 
     <HorizontalScrollView
         android:id="@+id/hsv"

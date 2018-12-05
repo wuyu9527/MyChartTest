@@ -46,7 +46,7 @@
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 
     <application
         android:name=".App.App"
@@ -72,9 +72,10 @@
         <activity
             android:name=".HtmlJSActivity"
             android:label="@string/title_activity_html_js" />
-        <activity android:name=".Protect.ProtectAppActivity"
-            android:theme="@style/mainManage"
-            />
+        <activity
+            android:name=".Protect.ProtectAppActivity"
+            android:theme="@style/mainManage" />
+        <activity android:name=".RecyclerViewTestActivity"></activity>
     </application>
 
 </manifest>
