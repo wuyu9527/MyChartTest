@@ -1,4 +1,4 @@
-package com.example.gupo_android.test;
+package com.example.gupo_android.test.Activity;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.example.gupo_android.test.Adapter.RecyclerviewAdapter;
+import com.example.gupo_android.test.R;
 import com.example.gupo_android.test.View.MyRecyclerView;
 
 import java.util.ArrayList;

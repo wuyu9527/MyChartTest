@@ -1,6 +1,6 @@
 <resources>
 
-    <!-- Base application theme. Base.Theme.AppCompat.Light.DarkActionBar -->
+    <!-- BaseRecyclerView application theme. BaseRecyclerView.Theme.AppCompat.Light.DarkActionBar -->
 
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->

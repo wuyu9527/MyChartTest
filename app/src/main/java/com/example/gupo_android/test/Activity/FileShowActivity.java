@@ -1,4 +1,4 @@
-package com.example.gupo_android.test;
+package com.example.gupo_android.test.Activity;
 
 
 import android.content.Intent;
@@ -15,6 +15,8 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.gupo_android.test.R;
 
 import es.voghdev.pdfviewpager.library.RemotePDFViewPager;
 import es.voghdev.pdfviewpager.library.adapter.PDFPagerAdapter;

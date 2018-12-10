@@ -64,18 +64,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HorizontalActivity"
+            android:name=".Activity.HorizontalActivity"
             android:label="@string/title_activity_horizontal" />
         <activity
-            android:name=".BarHorizontalActivity"
+            android:name=".Activity.BarHorizontalActivity"
             android:label="@string/title_activity_bar_horizontal" />
         <activity
-            android:name=".HtmlJSActivity"
+            android:name=".Activity.HtmlJSActivity"
             android:label="@string/title_activity_html_js" />
         <activity
             android:name=".Protect.ProtectAppActivity"
             android:theme="@style/mainManage" />
-        <activity android:name=".RecyclerViewTestActivity"></activity>
+        <activity android:name=".Activity.RecyclerViewTestActivity" />
+        <activity android:name=".Activity.AudioRecorderActivity"></activity>
     </application>
 
 </manifest>

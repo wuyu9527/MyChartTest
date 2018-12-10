@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="50dp"
+    android:paddingTop="10dp">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/chat_frame_left"
+        android:text="沙路口的减肥路上看到就废了卡萨丁均分拉克丝京东方" />
+
+</LinearLayout>

@@ -1,9 +1,10 @@
-package com.example.gupo_android.test;
+package com.example.gupo_android.test.Activity;
 
 import android.os.Bundle;
 import android.app.Activity;
 
 import com.example.gupo_android.test.Adapter.BarAdapter;
+import com.example.gupo_android.test.R;
 import com.example.gupo_android.test.View.AutoLocateHorizontalView;
 
 import java.util.ArrayList;

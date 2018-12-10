@@ -1,4 +1,4 @@
-package com.example.gupo_android.test;
+package com.example.gupo_android.test.Activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -18,6 +18,8 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.example.gupo_android.test.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

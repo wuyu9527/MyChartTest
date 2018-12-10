@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:paddingLeft="50dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/chat_frame_right"
+        android:text="沙路口的减肥路上看到就废了卡萨丁均分拉克丝京" />
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@android:color/holo_red_dark" />
+
+</LinearLayout>

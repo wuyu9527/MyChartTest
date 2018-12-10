@@ -59,6 +59,13 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
             holder.mRecyclerView.setVisibility(View.GONE);
         }
 
+        if (data.size() / 2 == position) {
+            holder.setInTheMiddle(true);
+            Log.i("whx","中间:"+holder.name.getText().toString());
+        } else {
+            holder.setInTheMiddle(false);
+        }
+
     }
 
     @Override
@@ -66,16 +73,34 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         return data.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name;
         private RecyclerView mRecyclerView;
+        private boolean isInTheMiddle;
 
         ViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tvName);
             mRecyclerView = itemView.findViewById(R.id.mRecyclerView);
 
+        }
+
+        public TextView getName() {
+            return name;
+        }
+
+        /**
+         * 中间位置
+         *
+         * @return true
+         */
+        public boolean getIsInTheMiddle() {
+            return isInTheMiddle;
+        }
+
+        public void setInTheMiddle(boolean inTheMiddle) {
+            isInTheMiddle = inTheMiddle;
         }
     }
 

@@ -1,4 +1,4 @@
-package com.example.gupo_android.test;
+package com.example.gupo_android.test.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.gupo_android.test.Adapter.AgeAdapter;
+import com.example.gupo_android.test.R;
 import com.example.gupo_android.test.View.AutoLocateHorizontalView;
 
 import java.util.Arrays;

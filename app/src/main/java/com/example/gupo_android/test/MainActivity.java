@@ -6,38 +6,27 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.media.ImageWriter;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.DocumentsContract;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.Toast;
 
+import com.example.gupo_android.test.Activity.HorizontalActivity;
+import com.example.gupo_android.test.Activity.HtmlJSActivity;
+import com.example.gupo_android.test.Activity.RecyclerViewTestActivity;
 import com.example.gupo_android.test.Protect.ProtectAppActivity;
 import com.example.gupo_android.test.Util.FingerUtils;
-import com.example.gupo_android.test.View.BaseChart;
 import com.example.gupo_android.test.View.ChartData;
 import com.example.gupo_android.test.View.LineChart;
 import com.example.gupo_android.test.lib.biometriclib.BiometricPromptManager;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.rendering.ImageType;
-import org.apache.pdfbox.rendering.PDFRenderer;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * 测试用
@@ -245,6 +234,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.button5:
                 startActivity(new Intent(this, RecyclerViewTestActivity.class));
+                break;
+            case R.id.button6:
+
                 break;
         }
     }
