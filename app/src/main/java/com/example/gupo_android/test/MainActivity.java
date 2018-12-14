@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.Toast;
 
+import com.example.gupo_android.test.Activity.AudioRecorderActivity;
 import com.example.gupo_android.test.Activity.HorizontalActivity;
 import com.example.gupo_android.test.Activity.HtmlJSActivity;
 import com.example.gupo_android.test.Activity.RecyclerViewTestActivity;
@@ -236,7 +237,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(new Intent(this, RecyclerViewTestActivity.class));
                 break;
             case R.id.button6:
-
+                startActivity(new Intent(this, AudioRecorderActivity.class));
                 break;
         }
     }

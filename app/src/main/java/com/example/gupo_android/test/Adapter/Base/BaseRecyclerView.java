@@ -53,7 +53,7 @@ public abstract class BaseRecyclerView<T extends BaseBean> extends RecyclerView.
         }
         return new BaseHolder(view) {
             @Override
-            public void setOnBindViewHolder(int position, Object o) {
+            public void setOnBindViewHolder(int position) {
 
             }
         };

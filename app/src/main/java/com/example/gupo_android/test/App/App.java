@@ -5,7 +5,7 @@ import android.app.Application;
 import com.example.gupo_android.test.App.init.ImageLoaderConfig;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
-import io.rong.imlib.RongIMClient;
+
 
 public class App extends Application {
 
