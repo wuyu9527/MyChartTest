@@ -39,6 +39,7 @@ public class MyMenu extends PopupWindow {
     private ListView lvContent;
     private List<MenuBean> menuBeans;
 
+    // FIXME: 2019/1/16 弹出菜单
     private void init(){
         LayoutInflater inflater = (LayoutInflater) getContentView().getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         assert inflater != null;
