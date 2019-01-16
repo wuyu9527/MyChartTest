@@ -8,4 +8,5 @@
     <color name="text_quaternary">#CDCED0</color>
     <color name="text_red">#FF5555</color>
     <color name="text_green">#82C785</color>
+    <color name="background_ground">#D9D9D9</color>
 </resources>

@@ -67,7 +67,7 @@ public class EmojiTab implements IEmoticonTab {
         this.mIndicator = (LinearLayout)view.findViewById(R.id.rc_indicator);
         this.mLayoutInflater = LayoutInflater.from(context);
         viewPager.setAdapter(new EmojiTab.EmojiPagerAdapter(pages));
-        viewPager.setOnPageChangeListener(new OnPageChangeListener() {
+        viewPager.addOnPageChangeListener(new OnPageChangeListener() {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             }
 

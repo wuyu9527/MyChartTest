@@ -125,7 +125,7 @@ public class FingerUtils {
 
                 mSignature = initSignature(KEY_NAME);
             } catch (Exception e) {
-                throw new RuntimeException(e);
+               e.printStackTrace();
             }
         } else if (Build.VERSION.SDK_INT >= 23) {
             manager = (FingerprintManager) context.getSystemService(Context.FINGERPRINT_SERVICE);
