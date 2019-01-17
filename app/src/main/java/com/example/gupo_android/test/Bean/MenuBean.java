@@ -10,12 +10,56 @@ public class MenuBean {
     private String text;
     private int color;
     private int image;
+    private int imageW;
+    private int imageH;
+
+    public MenuBean(int id, String text,int image, int imageW, int imageH) {
+        this.id = id;
+        this.text = text;
+        this.image = image;
+        this.imageW = imageW;
+        this.imageH = imageH;
+    }
+
+    public MenuBean(int id, String text,int image) {
+        this.id = id;
+        this.text = text;
+        this.color = color;
+        this.image = image;
+        this.imageW = imageW;
+        this.imageH = imageH;
+    }
 
     public MenuBean(int id, String text, int color, int image) {
         this.id = id;
         this.text = text;
         this.color = color;
         this.image = image;
+    }
+
+    public MenuBean(int id, String text, int color, int image, int imageW, int imageH) {
+        this.id = id;
+        this.text = text;
+        this.color = color;
+        this.image = image;
+        this.imageW = imageW;
+        this.imageH = imageH;
+    }
+
+    public int getImageW() {
+        return imageW;
+    }
+
+    public void setImageW(int imageW) {
+        this.imageW = imageW;
+    }
+
+    public int getImageH() {
+        return imageH;
+    }
+
+    public void setImageH(int imageH) {
+        this.imageH = imageH;
     }
 
     public int getId() {

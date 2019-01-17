@@ -20,6 +20,7 @@ import com.example.gupo_android.test.Activity.BigImageActivity;
 import com.example.gupo_android.test.Activity.FloatingActionButtonActivity;
 import com.example.gupo_android.test.Activity.HorizontalActivity;
 import com.example.gupo_android.test.Activity.HtmlJSActivity;
+import com.example.gupo_android.test.Activity.MyMenuActivity;
 import com.example.gupo_android.test.Activity.RecyclerViewTestActivity;
 import com.example.gupo_android.test.Protect.ProtectAppActivity;
 import com.example.gupo_android.test.Util.FingerUtils;
@@ -244,6 +245,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button8:
                 startActivity(new Intent(this, FloatingActionButtonActivity.class));
                 break;
+            case R.id.button9:
+                startActivity(new Intent(this, MyMenuActivity.class));
+                break;
         }
     }
 
@@ -286,8 +290,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     /**
      * 将宽度相同的图片，竖向追加在一起 ##注意：宽度必须相同,纵向处理图片
      *
-     * @param piclist 文件流数组
-     * @param outPath 输出路径
+     * //@param piclist 文件流数组
+     * //@param outPath 输出路径
      *//*
     public static void y2Pic(List<BufferedImage> piclist, String outPath) {
         if (piclist == null || piclist.size() <= 0) {

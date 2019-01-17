@@ -9,4 +9,5 @@
     <color name="text_red">#FF5555</color>
     <color name="text_green">#82C785</color>
     <color name="background_ground">#D9D9D9</color>
+    <color name="color_gray">#E6E6E6</color>
 </resources>
