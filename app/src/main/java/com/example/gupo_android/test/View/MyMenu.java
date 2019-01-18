@@ -261,12 +261,12 @@ public class MyMenu extends PopupWindow {
                             if (isDown) {
                                 iv.setImageResource(R.mipmap.ys_icon_b_jj_up);
                                 contentView.addView(iv, 0);
-                                x = (int) (isEnd ? event.getRawX() - iv.getWidth() : event.getRawX() - viewWidth - event.getX() / 2 - iv.getWidth());
+                                x = (int) (isEnd ? event.getRawX() - iv.getWidth() : event.getRawX() - contentView.getWidth() + iv.getWidth());
                                 y = (int) (event.getRawY() + event.getY());
                             } else {
                                 iv.setImageResource(R.mipmap.ys_icon_b_jj_down);
                                 contentView.addView(iv, 1);
-                                x = (int) (isEnd ? event.getRawX() - iv.getWidth() : event.getRawX() - viewWidth - event.getX() / 2 - iv.getWidth());
+                                x = (int) (isEnd ? event.getRawX() - iv.getWidth() : event.getRawX() - contentView.getWidth() + iv.getWidth());
                                 y = (int) (event.getRawY() - viewHeight - event.getY());
                             }
                             MyMenu.this.showAtLocation(parent, Gravity.TOP | Gravity.START, x, y);
